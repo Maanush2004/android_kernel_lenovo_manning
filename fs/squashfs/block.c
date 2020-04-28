@@ -453,6 +453,7 @@ static int __squashfs_read_data(struct super_block *sb, u64 index, int length,
 		ERROR("squashfs_read_data failed to read block 0x%llx\n",
 		      (unsigned long long)index);
 		return -EIO;
+
 	}
 
 	return length;
