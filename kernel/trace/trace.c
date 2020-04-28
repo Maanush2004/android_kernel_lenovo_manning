@@ -6648,6 +6648,7 @@ static int instance_rmdir(const char *name)
 	tracefs_remove_recursive(tr->dir);
 	free_trace_buffers(tr);
 
+	free_cpumask_var(tr->tracing_cpumask);
 	kfree(tr->name);
 	kfree(tr);
 
