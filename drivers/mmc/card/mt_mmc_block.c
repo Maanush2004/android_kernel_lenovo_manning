@@ -164,7 +164,7 @@ static void mt_bio_init_ctx(struct mt_bio_context *ctx, struct task_struct *thre
 	int i;
 
 	ctx->pid = task_pid_nr(thread);
-	get_task_comm(ctx->comm, thread);
+	__get_task_comm(ctx->comm, TASK_COMM_LEN, thread);
 	ctx->qid = get_qid_by_name(ctx->comm);
 	spin_lock_init(&ctx->lock);
 	ctx->id = get_ctxid_by_name(ctx->comm);
